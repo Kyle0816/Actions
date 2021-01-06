@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/kokilu/Actions.git
+          git clone https://github.com/kokilu/Actions.git ~/Actions
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -30,10 +30,12 @@ jobs:
       - name: npm install
         if: env.QQREAD_TIMEHD
         run: |
+          ~/Actions
           npm install
       - name: '运行 【企鹅读书】'
         if: env.QQREAD_TIMEHD
         run: |
+          ~/Actions
           node Task/qqreads.js
         env:
           
