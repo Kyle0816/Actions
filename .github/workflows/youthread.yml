@@ -19,6 +19,6 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: 运行 【京豆变动通知】
+      - name: 运行 【中青阅读1】
         run: |
           node Task/Youth_AutoRead.js
