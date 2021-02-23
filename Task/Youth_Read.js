@@ -26,7 +26,7 @@ if (!(bodys && bodys != '')) {
   $.msg("", "", '请先阅读文章获取中青body\nbody获取越多，脚本可获得青豆越多')
   $.done()
 }
-let bodys = $.getdata("zqgetbody_body");
+let bodys = $.getdata("zqbody");
 YouthBody = bodys.split('&');
 //if(!$.isNode()&&!YouthBody==true){
 //  $.log("您未获取阅读请求，请求阅读后获取")
