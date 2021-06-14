@@ -1,0 +1,24 @@
+name: 中青阅读4xh
+
+on:
+  workflow_dispatch:
+  watch:
+    types: started
+  schedule:
+   - cron: '0 1-15/2 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest       
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: 运行 【中青阅读4】
+        run: |
+          node Task/Youth_AutoRead4.js
