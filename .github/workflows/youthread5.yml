@@ -1,0 +1,24 @@
+name: 中青阅读5pad
+
+on:
+  workflow_dispatch:
+  watch:
+    types: started
+  schedule:
+   - cron: '30 1-9/4 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest       
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: 运行 【中青阅读5pad】
+        run: |
+          node Task/Youth_AutoRead5.js
